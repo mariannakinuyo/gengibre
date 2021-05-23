@@ -1,4 +1,4 @@
-# *PROJETO GENGIBRE*
+# **PROJETO GENGIBRE**
 # INICIAR
 
 Para começar um projeto sem o modelo:
