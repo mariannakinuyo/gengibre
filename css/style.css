@@ -1,0 +1,332 @@
+@font-face {
+  font-family: "Fakt Pro";
+  src: url("../fonts/FaktPro-Light.eot");
+  src: url("../fonts/FaktPro-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/FaktPro-Light.woff") format("woff"), url("../fonts/FaktPro-Light.ttf") format("truetype");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Fakt Pro";
+  src: url("../fonts/FaktPro-LightItalic.eot");
+  src: url("../fonts/FaktPro-LightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/FaktPro-LightItalic.woff") format("woff"), url("../fonts/FaktPro-LightItalic.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Fakt Pro";
+  src: url("../fonts/FaktPro-Medium.eot");
+  src: url("../fonts/FaktPro-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/FaktPro-Medium.woff") format("woff"), url("../fonts/FaktPro-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Fakt Pro";
+  src: url("../fonts/FaktPro-MediumItalic.eot");
+  src: url("../fonts/FaktPro-MediumItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/FaktPro-MediumItalic.woff") format("woff"), url("../fonts/FaktPro-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+html, body {
+  font-family: "Fakt Pro", sans-serif;
+  color: #333333;
+  font-size: 18px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+html.overflow-hidden, body.overflow-hidden {
+  overflow-y: hidden;
+}
+
+strong, b {
+  font-weight: 500;
+}
+
+a, a:hover {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1, h2, .bg-hero-picinguaba h5, .bg-hero-catucaba h5 {
+  font-weight: 500;
+}
+
+h3, h4, h5, h6, .h6, p, span, .small {
+  font-weight: 200;
+}
+
+p {
+  font-size: 1em;
+}
+p.price {
+  font-size: 1.18em;
+}
+p.host {
+  font-size: 0.9em;
+  font-weight: 500;
+}
+p.subtitle {
+  font-size: 0.818em;
+}
+p.small {
+  font-size: 0.818em;
+}
+
+h1 {
+  font-size: 2.18em;
+}
+h1.big {
+  font-size: 2.27em;
+}
+h1.bigger {
+  font-size: 2.727em;
+}
+
+h2 {
+  font-size: 1.818em;
+}
+
+h3 {
+  font-size: 1.636em;
+}
+
+h4 {
+  font-size: 1.454em;
+}
+
+h5 {
+  font-size: 1.363em;
+}
+
+h6 {
+  font-size: 1.09em;
+}
+h6.txt-timeline {
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.h6 {
+  font-size: 1.09em;
+}
+
+span {
+  font-size: 0.54em;
+}
+span.big {
+  font-size: 0.72em;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+.bg-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+}
+header li {
+  display: inline-block;
+  padding-left: 40px;
+}
+
+#menuToggle {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  /* hide this */
+  z-index: 2;
+  /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: var(--purple);
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: var(--purple);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  opacity: 1;
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu-mobile {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 0;
+  padding: 25px;
+  padding-top: 108px;
+  right: -100px;
+  background: white;
+  border: 1px solid var(--liner-gradient);
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  -webkit-box-shadow: -4px 4px 5px 0px rgba(0, 0, 0, 0.17);
+  -moz-box-shadow: -4px 4px 5px 0px rgba(0, 0, 0, 0.17);
+  box-shadow: -4px 4px 5px 0px rgba(0, 0, 0, 0.17);
+}
+
+#menu-mobile li {
+  padding: 5px 0;
+  font-size: 18px;
+  position: relative;
+  display: block;
+}
+
+#menuToggle input:checked ~ ul {
+  transform: none;
+  opacity: 1;
+}
+
+.mobile-menu {
+  height: 60px;
+  background-color: white;
+}
+.mobile-menu ul.sub-menu {
+  display: none;
+}
+.mobile-menu .menu-language li {
+  display: block;
+  font-size: 16px;
+  margin-left: 0px;
+  padding: 0px;
+  line-height: 18px;
+}
+.mobile-menu .menu-language a {
+  font-size: 16px;
+  color: black;
+}
+
+footer {
+  background-color: #fff;
+  padding: 50px 0;
+}
+
+.btn-primario {
+  border-radius: 50px;
+}
+
+.card-image {
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.ico-instagram {
+  background: url("../images/icons/ico-instagram.svg") no-repeat center/contain;
+  height: 38px;
+  width: 38px;
+  display: block;
+}
+
+.ico-arrow {
+  background: url("../images/icons/ico-arrow.svg") no-repeat center/contain;
+  height: 18px;
+  width: 26px;
+  margin-left: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  transition: 0.4s;
+}
+
+.ico-submit {
+  background: url("../images/icons/ico-submit.svg") no-repeat center/contain;
+  height: 14px;
+  width: 17px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.article {
+  margin-bottom: 68px;
+}
+
+.article-content p {
+  margin: 0;
+}
+
+.hero-home {
+  background-color: grey;
+  height: 85vh;
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home-objetivos {
+  padding: 70px;
+  background-color: #fff;
+  width: 83.333333%;
+}
+
+.rede-radial {
+  background-color: grey;
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+}
+
+/*# sourceMappingURL=style.css.map */
