@@ -1,6 +1,7 @@
 header {
-  position: fixed;
+  // position: fixed;
   width: 100%;
+  background-color: white;
   li {
     display: inline-block;
     padding-left: 40px;
@@ -121,4 +122,12 @@ header {
       color: black;
     }
   }
+}
+
+.logo-gengibre-menu {
+  height: 54px;
+}
+
+.logo-menu {
+  height: 120px;
 }

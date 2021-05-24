@@ -37,28 +37,16 @@
     <div class="row">
       <div class="col-12">
         <div class="d-flex justify-content-between">
-          <div class="social-link">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-          <div class="menu-home-lang">
-            <?php
-              wp_nav_menu( array( 'menu' => 'language', 'container' => FALSE, 'menu_class' => 'menu-home', 'menu_id' => false ) );
-            ?>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <div class="d-flex justify-content-between">
           <div class="logo-home">
-            <h1>LOGO</h1>
+            <img src="<?php bloginfo('template_url'); ?>/src/images/logo-menu.svg" alt="">
+            <img class="logo-gengibre-menu" src="<?php bloginfo('template_url'); ?>/src/images/logo-gengibre-menu.svg" alt="">
           </div>
-          <div class="menu-home-list">
+          <div class="menu-home-list d-flex">
             <?php
               wp_nav_menu( array( 'menu' => 'menu-home', 'container' => FALSE, 'menu_class' => 'menu-home', 'menu_id' => false ) );
+            ?>
+            <?php
+              wp_nav_menu( array( 'menu' => 'language', 'container' => FALSE, 'menu_class' => 'menu-home', 'menu_id' => false ) );
             ?>
           </div>
         </div>
