@@ -6,7 +6,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-12">
+    <div class="col-12 col-lg-6 offset-lg-1">
       <article>
         <?php the_post(); ?>
           <h1><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h1>
