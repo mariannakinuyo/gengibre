@@ -54,7 +54,7 @@ $botao_quem_somos = get_field('botao_quem_somos', $pageID);
                 <img src="<?php echo $imagem_quem_somos ?>" alt="">
             </div>
             <div class="col-lg-6">
-                <h2 class="line-green m-auto"><?php echo $titulo_quem_somos ?></h2>
+                <h1 class="line-green m-auto"><?php echo $titulo_quem_somos ?></h1>
                 <?php echo $texto_quem_somos ?>
                 <button class="btn-primario"><?php echo $botao_quem_somos ?></button>
             </div>
@@ -73,7 +73,7 @@ $botao_projeto = get_field('botao_projeto', $pageID);
         <div class="row">
             <div class="col-lg-6 pr-0">
                 <div class="box-texto">
-                    <h2 class="line-green m-auto"><?php echo $titulo_projeto ?></h2>
+                    <h1 class="line-green m-auto"><?php echo $titulo_projeto ?></h1>
                     <?php echo $texto_projeto ?>
                     <button class="btn-primario"><?php echo $botao_projeto ?></button>
                 </div>
@@ -93,7 +93,7 @@ $nossa_rede = get_field('nossa_rede');
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2 class="line-green"><?php echo $titulo_nossa_rede ?></h2>
+                <h1 class="line-green"><?php echo $titulo_nossa_rede ?></h1>
             </div>
             <div class="col-12">
                 <div class="d-flex justify-content-between">

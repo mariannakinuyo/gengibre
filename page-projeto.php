@@ -18,7 +18,7 @@ $destaque_projeto = get_field('frase_destaque_projeto', $pageID);
                     <div class="bg-title" style="background-image: url(<?php bloginfo('template_url'); ?>/src/images/titulo-1.png )">
                         <h1><?php the_title(); ?></h1>
                     </div>
-                    <h2><?php echo $destaque_projeto; ?></h2>
+                    <h3><?php echo $destaque_projeto; ?></h3>
                 </div>
             </div>
             <div class="col-lg-8 offset-lg-2 col-12">

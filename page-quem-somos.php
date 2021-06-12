@@ -7,8 +7,12 @@ $pageID = get_the_ID();
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-12">
-                <h1><?php the_title(); ?></h1>
-                <?php the_content(); ?>
+                <div class="bg-title" style="background-image: url(<?php bloginfo('template_url'); ?>/src/images/titulo-1.png )">
+                    <h1><?php the_title(); ?></h1>
+                </div>
+                <div class="content-quem">
+                    <?php the_content(); ?>
+                </div>
             </div>
         </div>
     </div>
@@ -22,10 +26,10 @@ $nossa_equipe = get_field('equipe');
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-12">
-                <h1><?php echo $titulo_equipe; ?></h1>
+                <h1 class="titulo-light"><?php echo $titulo_equipe; ?></h1>
             </div>
             <div class="col-lg-10 offset-lg-1 col-12">
-                <div>
+                <div class="d-flex">
                     <?php  
                     if( $nossa_equipe ) {
                         foreach( $nossa_equipe as $equipe ) {
@@ -34,18 +38,16 @@ $nossa_equipe = get_field('equipe');
                             $descricao_equipe = $equipe['descricao_equipe'];
                             $link = $equipe['links_equipe'];
                     ?>
-
                         <div data-toggle="modal" data-target="#<?php echo $nome_equipe; ?>">
                             <img class="img-equipe" src="<?php echo $foto_equipe; ?>" alt="">
                         </div>
-
                         <!-- modal -->
                         <div class="modal fade" id="<?php echo $nome_equipe; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                <div class="modal-equipe">
+                                <div class="modal-equipe modal-content">
                                     <div class="d-flex">
                                         <img class="img-modal-equipe" src="<?php echo $foto_equipe; ?>" alt="">
                                         <div>
@@ -62,32 +64,7 @@ $nossa_equipe = get_field('equipe');
                                 </div>
                             </div>
                         </div>
-
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<?php echo $foto_equipe; ?>">
-                        Launch demo modal
-                        </button>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="<?php echo $foto_equipe; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                            <a href="<?php echo $link_url; ?>" title="<?php echo $nome_equipe; ?>"><p><?php echo $link_nome ?></p></a>
-                                ...
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
+                        
                     <?php 
                     wp_reset_postdata(); }
                     }
@@ -106,7 +83,7 @@ $instituicoes = get_field('instituicoes');
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-12">
-                <h1><?php echo $titulo_instituicoes; ?></h1>
+                <h1 class="line-green m-auto"><?php echo $titulo_instituicoes; ?></h1>
             </div>
             <div class="col-lg-10 offset-lg-1 col-12">
                 <div class="d-flex">
@@ -138,7 +115,7 @@ $redes = get_field('rede');
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-12">
-                <h1><?php echo $titulo_rede; ?></h1>
+                <h1 class="line-green m-auto"><?php echo $titulo_rede; ?></h1>
             </div>
             <div class="col-lg-10 offset-lg-1 col-12">
                 <div class="d-flex">
