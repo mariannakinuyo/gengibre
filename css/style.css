@@ -52,32 +52,16 @@ h2 {
 }
 
 h3 {
-  font-size: 1.636em;
+  font-size: 24px;
+  margin-bottom: 24px;
 }
 
 h4 {
-  font-size: 1.454em;
-}
-
-h5 {
-  font-size: 1.363em;
-}
-
-h6 {
-  font-size: 1.09em;
-}
-h6.txt-timeline {
-  font-size: 1em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-.h6 {
-  font-size: 1.09em;
+  font-size: 20px;
 }
 
 span {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 ul {
@@ -269,6 +253,7 @@ header li {
 footer {
   background-color: var(--violet);
   padding: 50px 0;
+  margin-top: 120px;
 }
 
 button.btn-primario {
@@ -435,8 +420,25 @@ h2.line-green::after {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2), 0px 4px 4px rgba(0, 0, 0, 0.2), 0px 4px 4px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   text-align: center;
-  padding: 36px 0px;
+  padding: 36px 110px;
   margin-bottom: 70px;
+  margin-top: -80px;
+}
+.titulo-projeto .bg-title {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  height: 120px;
+}
+.titulo-projeto h1 {
+  padding-top: 44px;
+  color: #fff;
+}
+.titulo-projeto h2 {
+  font-family: "EB Garamond", serif;
+  font-size: 36px;
+  margin-top: 15px;
 }
 
 .bg-bloco-img {
@@ -463,6 +465,12 @@ h2.line-green::after {
   height: 8px;
   background-color: #5F4B8B;
   margin: auto;
+}
+
+.wp-block-image figcaption {
+  margin-top: 3px;
+  margin-bottom: 16px;
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=style.css.map */

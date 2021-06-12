@@ -50,28 +50,15 @@ h2 {
   font-size: 36px;
 }
 h3 {
-  font-size: 1.636em; //36px
+  font-size: 24px;
+  margin-bottom: 24px;
 }
 h4 {
-  font-size: 1.454em; //32px
-}
-h5 {
-  font-size: 1.363em; //30px
-}
-h6 {
-  font-size: 1.09em; //24px
-  &.txt-timeline {
-    font-size: 1em;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-}
-.h6 {
-  font-size: 1.09em; //24px
+  font-size: 20px;
 }
 
 span {
-  font-size: 16px; 
+  font-size: 18px; 
 }
 
 ul {

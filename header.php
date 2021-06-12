@@ -61,7 +61,7 @@
         <nav role='navigation' class="mobile-menu d-lg-none d-block">
           <div class="logo-menu">
             <a href="<?php echo home_url() ?>">
-              <img src="<?php bloginfo('template_url'); ?>/images/logo-capire.png" alt="">
+              <img src="<?php bloginfo('template_url'); ?>/src/images/logo-capire.png" alt="">
               <h1>LOGO</h1>
             </a>
           </div>

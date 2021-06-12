@@ -33,8 +33,28 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2), 0px 4px 4px rgba(0, 0, 0, 0.2), 0px 4px 4px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     text-align: center;
-    padding: 36px 0px;
+    padding: 36px 110px;
     margin-bottom: 70px;
+    margin-top: -80px;
+
+    .bg-title {
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+        height: 120px;
+    }
+
+    h1 {
+        padding-top: 44px;
+        color: #fff;
+    }
+
+    h2 {
+        font-family: $font-terciary;
+        font-size: 36px;
+        margin-top: 15px;
+    }
 }
 
 .bg-bloco-img {
@@ -61,4 +81,10 @@
     height: 8px;
     background-color: #5F4B8B;
     margin: auto;
+}
+
+.wp-block-image figcaption {
+    margin-top: 3px;
+    margin-bottom: 16px;
+    font-size: 14px;
 }

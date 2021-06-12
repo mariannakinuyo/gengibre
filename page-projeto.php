@@ -3,9 +3,11 @@ get_header();
 $pageID = get_the_ID();
 $page = get_post(get_the_ID());
 $thumb = get_the_post_thumbnail_url();
+$pageID = get_the_ID();
+$destaque_projeto = get_field('frase_destaque_projeto', $pageID);
 ?>
 
-<section>
+<section class="header-projeto">
     <div class="bg-img thumb-projeto" style="background-image: url(<?php echo $thumb ?> )"></div>
 </section>
 <section>
@@ -13,7 +15,10 @@ $thumb = get_the_post_thumbnail_url();
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-12">
                 <div class="titulo-projeto">
-                    <h1><?php the_title(); ?></h1>
+                    <div class="bg-title" style="background-image: url(<?php bloginfo('template_url'); ?>/src/images/titulo-1.png )">
+                        <h1><?php the_title(); ?></h1>
+                    </div>
+                    <h2><?php echo $destaque_projeto; ?></h2>
                 </div>
             </div>
             <div class="col-lg-8 offset-lg-2 col-12">
@@ -21,7 +26,6 @@ $thumb = get_the_post_thumbnail_url();
                     <?php
                     if ( has_blocks( $page->post_content ) ) {
                         $blocks = parse_blocks( $page->post_content );
-
                         foreach ( $blocks as $block ) {
                             echo apply_filters( 'the_content', render_block( $block ) );
                         }
@@ -32,5 +36,6 @@ $thumb = get_the_post_thumbnail_url();
         </div>
     </div>
 </section>
+
 
 <?php get_footer(); ?>
