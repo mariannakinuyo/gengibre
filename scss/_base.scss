@@ -10,7 +10,7 @@ html, body {
 }
 
 strong, b {
-  font-weight: 500;
+  font-weight: 700;
 }
 
 a, a:hover {
@@ -24,64 +24,37 @@ h1, h2, .bg-hero-picinguaba h5, .bg-hero-catucaba h5 {
 }
 
 h3, h4, h5, h6, .h6, p, span, .small {
-  font-weight: 200;
+  font-weight: 400;
 }
 
 p {
-  font-size: 1em; //22px
-  &.price {
-    font-size: 1.18em; //26px
-  }
-  &.host {
-    font-size: 0.90em; //20px;
-    font-weight: 500;
-  }
+  font-size: 18px;
   &.subtitle {
-    font-size: 0.818em; //18px
+    font-size: 14px;
   }
   &.small {
-    font-size:  0.818em; //18px
+    font-size:  12px;
   }
 }
 
 h1 {
-  font-size: 2.18em; //48px
-  &.big {
-    font-size: 2.27em; //50px
-  }
-  &.bigger {
-    font-size: 2.727em; //60px
-  }
+  font-size: 36px;
+  font-weight: 700;
+  font-family: $font-terciary;
 }
 h2 {
-  font-size: 1.818em; //40px
+  font-size: 28px;
 }
 h3 {
-  font-size: 1.636em; //36px
+  font-size: 24px;
+  margin-bottom: 24px;
 }
 h4 {
-  font-size: 1.454em; //32px
-}
-h5 {
-  font-size: 1.363em; //30px
-}
-h6 {
-  font-size: 1.09em; //24px
-  &.txt-timeline {
-    font-size: 1em;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-}
-.h6 {
-  font-size: 1.09em; //24px
+  font-size: 20px;
 }
 
 span {
-  font-size: 0.54em; //12px
-  &.big {
-    font-size: 0.72em; //16px
-  }
+  font-size: 18px; 
 }
 
 ul {
@@ -92,14 +65,45 @@ ul {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 button {
   cursor: pointer;
+  &:active {
+    border: 0px;
+    outline: 0px;
+  }
+  &:focus {
+    border: 0px;
+    outline: 0px;
+  }
+  &:target {
+    border: 0px;
+    outline: 0px;
+  }
 }
 
 .bg-image {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.green {
+  color: var(--green);
+}
+
+.violet {
+  color: var(--violet);
+}
+
+.violet-light {
+  color: var(--violet-light);
+}
+
+:root {
+  --green: #3E5636;
+  --violet: #5F4B8B;
+  --violet-light: #EFEAF9;
 }

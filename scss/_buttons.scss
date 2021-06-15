@@ -1,3 +1,20 @@
-.btn-primario {
-    border-radius: 50px;
-}
+
+button.btn-primario {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: $font-secondary;
+    color: var(--violet);
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid var(--violet);
+    padding: 2px 12px;
+    transition-duration: 0.2s;
+    &:hover {
+        color: #fff;
+        background-color: var(--violet);
+    }
+    &:active {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
