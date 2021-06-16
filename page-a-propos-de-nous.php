@@ -1,4 +1,4 @@
- <?php 
+<?php 
 get_header();
 $pageID = get_the_ID();
 ?>
@@ -19,8 +19,8 @@ $pageID = get_the_ID();
 </section>
 
 <?php
-$titulo_equipe = get_field('titulo_equipe', $pageID);
-$nossa_equipe = get_field('equipe');
+$titulo_equipe = get_field('titulo_equipe_fr', $pageID);
+$nossa_equipe = get_field('equipe_fr');
 ?>
 <section class="page-equipe">
     <div class="container">
@@ -49,51 +49,50 @@ $nossa_equipe = get_field('equipe');
                             ?>
                         </div>
                     </div>
+                    <?php  
+                    if( $nossa_equipe ) {
+                        foreach( $nossa_equipe as $equipe ) {
+                            $nome_equipe = $equipe['nome_equipe'];
+                            $foto_equipe = $equipe['foto_equipe'];
+                            $descricao_equipe = $equipe['descricao_equipe'];
+                            $link = $equipe['links_equipe'];
+                    ?>
+                        <!-- modal -->
+                        <div class="modal fade" id="<?php echo $nome_equipe; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <div class="modal-equipe modal-content">
+                                    <div class="d-flex">
+                                        <img class="img-modal-equipe" src="<?php echo $foto_equipe; ?>" alt="">
+                                        <div>
+                                            <h4><?php echo $nome_equipe; ?></h4>
+                                            <p><?php echo $descricao_equipe; ?></p>
+                                            <?php if ( $link ) {
+                                                $link_url = $link['url'];
+                                                $link_nome = $link['title'];
+                                            }
+                                            ?>
+                                            <a href="<?php echo $link_url; ?>" title="<?php echo $nome_equipe; ?>"><p><?php echo $link_nome ?></p></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php 
+                    wp_reset_postdata(); }
+                    }
+                    ?>
                 </div>
             </div>
         </div>
-        <?php  
-        if( $nossa_equipe ) {
-            foreach( $nossa_equipe as $equipe ) {
-                $nome_equipe = $equipe['nome_equipe'];
-                $foto_equipe = $equipe['foto_equipe'];
-                $descricao_equipe = $equipe['descricao_equipe'];
-                $link = $equipe['links_equipe'];
-        ?>
-            <!-- modal -->
-            <div class="modal fade" id="<?php echo $nome_equipe; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    
-                    <div class="modal-equipe modal-content">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span class="btn-close" aria-hidden="true">&times;</span>
-                        </button>
-                        <div class="d-flex align-items-center">
-                            <img class="img-modal-equipe" src="<?php echo $foto_equipe; ?>" alt="">
-                            <div class="box-texto">
-                                <h4><?php echo $nome_equipe; ?></h4>
-                                <p><?php echo $descricao_equipe; ?></p>
-                                <?php if ( $link ) {
-                                    $link_url = $link['url'];
-                                    $link_nome = $link['title'];
-                                }
-                                ?>
-                                <a href="<?php echo $link_url; ?>" title="<?php echo $nome_equipe; ?>"><p><?php echo $link_nome ?></p></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <?php 
-        wp_reset_postdata(); }
-        }
-        ?>
     </div>
 </section>
 
 <?php
-$titulo_instituicoes = get_field('titulo_nossas_instituicoes', $pageID);
-$instituicoes = get_field('instituicoes');
+$titulo_instituicoes = get_field('titulo_nossas_instituicoes_fr', $pageID);
+$instituicoes = get_field('instituicoes_fr');
 ?>
 <section>
     <div class="container">

@@ -4,7 +4,6 @@
 function register_my_menu() {
 
 	register_nav_menus( array(
-		'menu-tags'  => 'Menu tags',
 		'menu-home'  => 'Menu home',
 		'footer'  => 'Footer',
 		'language'  => 'language',

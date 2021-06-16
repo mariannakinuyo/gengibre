@@ -36,13 +36,15 @@
 
 <header class="header">
   
-  <div class="container-fluid d-none d-lg-block">
+  <div class="menu-home container-fluid d-none d-lg-block">
     <div class="row">
       <div class="col-12">
         <div class="d-flex justify-content-between">
           <div class="logo-home d-flex">
-            <img src="<?php bloginfo('template_url'); ?>/src/images/logo-menu.svg" alt="">
-            <img class="logo-gengibre-menu" src="<?php bloginfo('template_url'); ?>/src/images/logo-gengibre-menu.svg" alt="">
+            <a class="opacity" href="<?php bloginfo('siteurl'); ?>">
+              <img class="logo-gen" src="<?php bloginfo('template_url'); ?>/src/images/logo-menu.svg" alt="">
+              <img class="logo-gengibre-menu" src="<?php bloginfo('template_url'); ?>/src/images/logo-gengibre-menu.svg" alt="">
+            </a>
           </div>
           <div class="menu-home-list d-flex">
             <?php
