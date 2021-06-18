@@ -63,7 +63,7 @@ $botao_projeto = get_field('botao_projeto_fr', $pageID);
             <div class="col-lg-6">
                 <h1 class="line-green m-auto"><?php echo $titulo_projeto ?></h1>
                 <?php echo $texto_projeto ?>
-                <button class="btn-primario"><?php echo $botao_projeto ?></button>
+                <a href="<?php bloginfo('siteurl'); ?>/projeto"><button class="btn-primario"><?php echo $botao_projeto ?></button></a>
             </div>
         </div>
     </div>
@@ -82,7 +82,7 @@ $botao_quem_somos = get_field('botao_quem_somos_fr', $pageID);
                 <div class="box-texto">
                     <h1 class="line-green m-auto"><?php echo $titulo_quem_somos ?></h1>
                     <?php echo $texto_quem_somos ?>
-                    <button class="btn-primario"><?php echo $botao_quem_somos ?></button>
+                    <a href="<?php bloginfo('siteurl'); ?>/quem-somos"><button class="btn-primario"><?php echo $botao_quem_somos ?></button></a>
                 </div>
             </div>
             <div class="col-lg-6 pl-0">
@@ -100,9 +100,9 @@ $nossa_rede = get_field('nossa_rede_fr');
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="line-green"><?php echo $titulo_nossa_rede ?></h1>
+                <h1 class="line-green m-auto"><?php echo $titulo_nossa_rede ?></h1>
             </div>
-            <div class="col-12">
+            <div class="col-12 mt-lg-4">
                 <div class="d-flex justify-content-between">
                 <?php  
                 if( $nossa_rede ) {

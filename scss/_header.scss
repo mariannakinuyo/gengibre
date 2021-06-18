@@ -9,6 +9,27 @@ header {
     font-size: 16px;
     a {
       transition-duration: 0.2s;
+      @media screen and (max-width: 1199px) {
+        color: #fff;
+        font-weight: 300;
+      }
+    }
+    &:active {
+      @media screen and (max-width: 1199px) {
+        text-decoration: underline;
+        color: #fff;
+      }
+    }
+    a:not([href]):not([tabindex]) {
+      @media screen and (max-width: 1199px) {
+        color: #fff;
+      }
+      &:active {
+        @media screen and (max-width: 1199px) {
+          text-decoration: underline;
+          color: #fff;
+        }
+      }
     }
     a:after {
       content: "";
@@ -17,8 +38,15 @@ header {
       height: 3px;
       background-color: #fff;
       transition-duration: 0.2s;
+      @media screen and (max-width: 1199px) {
+        height: 0px;
+      }
     }
     a:hover {
+      @media screen and (max-width: 1199px) {
+        color: #fff;
+        font-weight: 300;
+      }
       &:after {
         background-color: var(--green);
       }
@@ -26,23 +54,9 @@ header {
   }
 }
 
-a.opacity:hover {
+.opacity:hover {
   opacity: 0.85;
-}
-
-.logo-home {
-  margin: auto;
-}
-
-.menu-home {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.logo-gen {
-  height: 106px;
-  width: auto;
-  margin-right: 14px;
+  cursor: pointer;
 }
 
 #menuToggle {
@@ -53,6 +67,9 @@ a.opacity:hover {
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
+  @media screen and (max-width: 1199px) {
+    top: 33px;
+  }
 }
 
 #menuToggle input {
@@ -74,7 +91,7 @@ a.opacity:hover {
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  background: var(--purple);
+  background: var(--violet);
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0px;
@@ -94,7 +111,7 @@ a.opacity:hover {
 #menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: var(--purple);
+  background: #fff;
 }
 
 #menuToggle input:checked ~ span:nth-last-child(3) {
@@ -114,8 +131,7 @@ a.opacity:hover {
   padding: 25px;
   padding-top: 108px;
   right: -100px;
-  background: white;
-  border: 1px solid var(--liner-gradient);
+  background: var(--violet);
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
@@ -155,8 +171,28 @@ a.opacity:hover {
   }
 }
 
+.logo-home {
+  margin: auto;
+}
+
+.menu-home {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.logo-gen {
+  height: 106px;
+  width: auto;
+  margin-right: 14px;
+  @media screen and (max-width: 1199px) {
+    height: 74px;
+    margin-right: 0px;
+    margin-top: 10px;
+  }
+}
+
 .mobile-menu {
-  height: 60px;
+  height: 90px;
   background-color: white;
   ul.sub-menu {
     display: none;
@@ -173,6 +209,12 @@ a.opacity:hover {
     a {
       font-size: 16px;
       color: black;
+      @media screen and (max-width: 1199px) {
+        color: #fff;
+      }
+    }
+    ul {
+      display: flex;
     }
   }
 }
@@ -180,6 +222,10 @@ a.opacity:hover {
 .logo-gengibre-menu {
   height: 54px;
   margin: auto;
+  @media screen and (max-width: 1199px) {
+    width: 122px;
+    margin-top: 10px;
+  }
 }
 
 .logo-menu {
@@ -188,4 +234,26 @@ a.opacity:hover {
 
 .menu-home-list {
   margin: auto;
+}
+
+.menu-language {
+  @media screen and (max-width: 1199px) {
+    display: flex;
+  }
+  li:first-of-type {
+    &:after {
+      content: "|";
+      font-size: 14px;
+      display: inline;
+      padding-left: 12px;
+      padding-right: 12px;
+      color: #fff;
+    }
+  }
+  li:last-of-type {
+    padding-left: 6px;
+  }
+  a {
+    display: inline-block;
+  }
 }

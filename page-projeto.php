@@ -8,7 +8,8 @@ $destaque_projeto = get_field('frase_destaque_projeto', $pageID);
 ?>
 
 <section class="header-projeto">
-    <div class="bg-img thumb-projeto" style="background-image: url(<?php echo $thumb ?> )"></div>
+    <img class="thumb-projeto" src="<?php echo $thumb ?>" alt="">
+    <!-- <div class="bg-img thumb-projeto" style="background-image: url(<?php echo $thumb ?> )"></div> -->
 </section>
 <section>
     <div class="container">

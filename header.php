@@ -57,14 +57,14 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container d-lg-none d-block">
     <div class="row">
       <div class="col-12">
-        <nav role='navigation' class="mobile-menu d-lg-none d-block">
+        <nav role='navigation' class="mobile-menu">
           <div class="logo-menu">
             <a href="<?php echo home_url() ?>">
-              <img src="<?php bloginfo('template_url'); ?>/src/images/logo-capire.png" alt="">
-              <h1>LOGO</h1>
+              <img class="logo-gen" src="<?php bloginfo('template_url'); ?>/src/images/logo-menu.svg" alt="gengibre">
+              <img class="logo-gengibre-menu" src="<?php bloginfo('template_url'); ?>/src/images/logo-mobile.svg" alt="gengibre">
             </a>
           </div>
           <div id="menuToggle">

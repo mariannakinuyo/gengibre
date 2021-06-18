@@ -40,8 +40,10 @@ $nossa_equipe = get_field('equipe');
                                     $descricao_equipe = $equipe['descricao_equipe'];
                                     $link = $equipe['links_equipe'];
                             ?>
-                                <div class="box-img" data-toggle="modal" data-target="#<?php echo $nome_equipe; ?>">
-                                    <img class="img-equipe" src="<?php echo $foto_equipe; ?>" alt="">
+                                <div class="box-img">
+                                    <div class="opacity" data-toggle="modal" data-target="#<?php echo $nome_equipe; ?>">
+                                        <img class="img-equipe" src="<?php echo $foto_equipe; ?>" alt="">
+                                    </div>
                                 </div>
                             <?php 
                             wp_reset_postdata(); }
@@ -68,7 +70,7 @@ $nossa_equipe = get_field('equipe');
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span class="btn-close" aria-hidden="true">&times;</span>
                         </button>
-                        <div class="d-flex align-items-center">
+                        <div class="d-lg-flex align-items-center box-modal">
                             <img class="img-modal-equipe" src="<?php echo $foto_equipe; ?>" alt="">
                             <div class="box-texto">
                                 <h4><?php echo $nome_equipe; ?></h4>
@@ -101,8 +103,8 @@ $instituicoes = get_field('instituicoes');
             <div class="col-lg-8 offset-lg-2 col-12">
                 <h1 class="line-green m-auto"><?php echo $titulo_instituicoes; ?></h1>
             </div>
-            <div class="col-lg-10 offset-lg-1 col-12">
-                <div class="d-flex justify-content-between">
+            <div class="col-lg-10 offset-lg-1 col-12 mt-4">
+                <div class="d-lg-flex justify-content-between">
                     <?php  
                     if( $instituicoes ) {
                         foreach( $instituicoes as $instituicao ) {
@@ -110,7 +112,7 @@ $instituicoes = get_field('instituicoes');
                             $logo_instituicao = $instituicao['logo_instituicao'];
                             $link_instituicao = $instituicao['link_instituicao'];
                     ?>
-                        <a href="<?php echo $link_instituicao; ?>" title="<?php echo $nome_instituicao; ?>">
+                        <a class="opacity" href="<?php echo $link_instituicao; ?>" title="<?php echo $nome_instituicao; ?>">
                             <div class="rede-radial">
                                 <img src="<?php echo $logo_instituicao; ?>" alt="<?php echo $nome_instituicao; ?>">
                             </div>
@@ -128,6 +130,7 @@ $instituicoes = get_field('instituicoes');
 <?php
 $titulo_rede = get_field('titulo_nossa_rede', $pageID);
 $redes = get_field('rede');
+if( $redes ) {
 ?>
 <section>
     <div class="container">
@@ -135,20 +138,20 @@ $redes = get_field('rede');
             <div class="col-lg-8 offset-lg-2 col-12">
                 <h1 class="line-green m-auto"><?php echo $titulo_rede; ?></h1>
             </div>
-            <div class="col-lg-10 offset-lg-1 col-12">
-                <div class="d-flex">
+            <div class="col-lg-10 offset-lg-1 col-12 mt-4">
+                <div class="d-lg-flex">
                     <?php  
-                    if( $redes ) {
+                    
                         foreach( $redes as $rede ) {
                             $nome_rede = $rede['nome_rede'];
                             $logo_rede = $rede['logo_rede'];
                             $link_rede = $rede['link_rede'];
                     ?>
-                        <a href="<?php echo $link_rede; ?>" title="<?php echo $nome_rede; ?>">
+                        <a class="opacity" href="<?php echo $link_rede; ?>" title="<?php echo $nome_rede; ?>">
                             <img src="<?php echo $logo_rede; ?>" alt="<?php echo $nome_rede; ?>">
                         </a>
                     <?php 
-                    wp_reset_postdata(); }
+                    wp_reset_postdata(); 
                     }
                     ?>
                 </div>
@@ -156,6 +159,7 @@ $redes = get_field('rede');
         </div>
     </div>
 </section>
+<?php } ?>
 
 
 

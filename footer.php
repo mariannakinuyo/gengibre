@@ -8,19 +8,19 @@
                     <img class="logo-footer" src="<?php bloginfo('template_url'); ?>/src/images/logo-branco.svg" alt="">
                 </a>
             </div>
-            <div class="col-lg-6 redes-footer justify-content-end">
+            <div class="col-lg-6 col-12 redes-footer justify-content-end">
                 <?php
                 wp_nav_menu( array( 'menu' => 'footer', 'container' => FALSE, 'menu_class' => 'menu-footer', 'menu_id' => false ) );
                 ?>
-                <div class="redes">
+                <!-- <div class="redes">
                     <a class="opacity" href=""><div class="facebook"><span></span></div></a>
                     <a class="opacity" href=""><div class="twitter"><span></span></div></a>
                     <a class="opacity" href=""><div class="whatsapp"><span></span></div></a>
                     <a class="opacity" href=""><div class="telegram"><span></span></div></a>
-                </div>
+                </div> -->
             </div>
-            <div class="col-lg-12">
-                <p class="small">© 2020 Gengibre. All Rights Reserved.</p>
+            <div class="col-12">
+                <p class="small">© 2021 GENgiBRe. All Rights Reserved.</p>
             </div>
         </div>
     </div>

@@ -2,6 +2,9 @@ footer {
   background-color: var(--violet);
   padding: 50px 0 20px;
   margin-top: 120px;
+  @media screen and (max-width: 1199px) {
+    padding: 50px 0 3px;
+  }
 
   .small {
     color: #fff;
@@ -11,17 +14,36 @@ footer {
 
 .logo-footer {
   margin-bottom: 30px;
+  img {
+    width: 192px;
+    height: auto;
+    @media screen and (max-width: 1199px) {
+      width: 140px;
+      margin-bottom: 12px;
+    }
+  }
 }
 
 .redes-footer {
   display: flex;
   margin-top: 10px;
+  @media screen and (max-width: 1199px) {
+    display: block;
+  }
 }
 
 .menu-footer {
   display: flex;
+  @media screen and (max-width: 1199px) {
+    display: block;
+    margin-bottom: 20px;
+  }
   li {
     margin-left: 40px;
+    @media screen and (max-width: 1199px) {
+      margin-left: 0px;
+      margin-bottom: 5px;
+    }
     a {
       font-size: 16px;
       color: #fff;
@@ -37,6 +59,11 @@ footer {
   display: flex;
   margin-left: 35px;
   margin-top: 7px;
+  @media screen and (max-width: 1199px) {
+    margin-left: 0px;
+    margin-bottom: 24px;
+    margin-top: 16px;
+  }
 }
 
 .facebook span {
