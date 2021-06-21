@@ -28,9 +28,13 @@ $nossa_equipe = get_field('equipe');
             <div class="col-lg-8 offset-lg-2 col-12">
                 <h1 class="titulo-light"><?php echo $titulo_equipe; ?></h1>
             </div>
-            <div class="col-lg-12 col-12">
-                <div class="bg-img flor-equipe" style="background-image: url(<?php bloginfo('template_url'); ?>/src/images/flor-nova.png)">
-                    <div class="col-lg-10 offset-lg-1">
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-12 p-equipe">
+                <div class="bg-img flor-equipe">
+                    <div class="col-md-10 offset-md-1 p-equipe">
                         <div class="grid-container">
                             <?php  
                             if( $nossa_equipe ) {
@@ -65,13 +69,12 @@ $nossa_equipe = get_field('equipe');
             <!-- modal -->
             <div class="modal fade" id="<?php echo $nome_equipe; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
-                    
                     <div class="modal-equipe modal-content">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span class="btn-close" aria-hidden="true">&times;</span>
                         </button>
                         <div class="d-lg-flex align-items-center box-modal">
-                            <img class="img-modal-equipe" src="<?php echo $foto_equipe; ?>" alt="">
+                            <img class="img-modal-equipe" src="<?php echo $foto_equipe; ?>" alt="foto da equipe">
                             <div class="box-texto">
                                 <h4><?php echo $nome_equipe; ?></h4>
                                 <p><?php echo $descricao_equipe; ?></p>
@@ -97,14 +100,14 @@ $nossa_equipe = get_field('equipe');
 $titulo_instituicoes = get_field('titulo_nossas_instituicoes', $pageID);
 $instituicoes = get_field('instituicoes');
 ?>
-<section>
+<section id="nossa-rede">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-12">
                 <h1 class="line-green m-auto"><?php echo $titulo_instituicoes; ?></h1>
             </div>
             <div class="col-lg-10 offset-lg-1 col-12 mt-4">
-                <div class="d-lg-flex justify-content-between">
+                <div class="flex-rede">
                     <?php  
                     if( $instituicoes ) {
                         foreach( $instituicoes as $instituicao ) {

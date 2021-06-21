@@ -94,7 +94,7 @@ $nossa_equipe = get_field('equipe_fr');
 $titulo_instituicoes = get_field('titulo_nossas_instituicoes_fr', $pageID);
 $instituicoes = get_field('instituicoes_fr');
 ?>
-<section>
+<section id="notre-reseau">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-12">

@@ -23,7 +23,7 @@
   <title><?php bloginfo('name'); ?></title>
   <meta name="description" content="GENgiBRe">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css?1422981258">
+  <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css?14221258">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500;1,700;1,800&display=swap" rel="stylesheet">
@@ -57,7 +57,7 @@
     </div>
   </div>
 
-  <div class="container d-lg-none d-block">
+  <div class="container d-lg-none d-block menu-mobile">
     <div class="row">
       <div class="col-12">
         <nav role='navigation' class="mobile-menu">
