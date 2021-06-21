@@ -4,12 +4,11 @@ $pageID = get_the_ID();
 $page = get_post(get_the_ID());
 $thumb = get_the_post_thumbnail_url();
 $pageID = get_the_ID();
-$destaque_projeto = get_field('frase_destaque_projeto', $pageID);
+$destaque_projeto = get_field('frase_destaque_projeto_fr', $pageID);
 ?>
 
 <section class="header-projeto">
-    <img class="thumb-projeto" src="<?php echo $thumb ?>" alt="">
-    <!-- <div class="bg-img thumb-projeto" style="background-image: url(<?php echo $thumb ?> )"></div> -->
+    <div class="bg-img thumb-projeto" style="background-image: url(<?php echo $thumb ?> )"></div>
 </section>
 <section>
     <div class="container">

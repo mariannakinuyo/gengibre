@@ -1,5 +1,114 @@
 footer {
   background-color: var(--violet);
-  padding: 50px 0;
+  padding: 50px 0 20px;
   margin-top: 120px;
+  @media screen and (max-width: 1199px) {
+    padding: 50px 0 3px;
+  }
+
+  .small {
+    color: #fff;
+    margin-bottom: 5px;
+  }
 }
+
+.logo-footer {
+  margin-bottom: 30px;
+  img {
+    width: 192px;
+    height: auto;
+    @media screen and (max-width: 1199px) {
+      width: 140px;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.redes-footer {
+  display: flex;
+  margin-top: 10px;
+  @media screen and (max-width: 1199px) {
+    display: block;
+  }
+}
+
+.menu-footer {
+  display: flex;
+  @media screen and (max-width: 1199px) {
+    display: block;
+    margin-bottom: 20px;
+  }
+  li {
+    margin-left: 40px;
+    @media screen and (max-width: 1199px) {
+      margin-left: 0px;
+      margin-bottom: 5px;
+    }
+    a {
+      font-size: 16px;
+      color: #fff;
+    }
+    a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+}
+
+.redes {
+  display: flex;
+  margin-left: 35px;
+  margin-top: 7px;
+  @media screen and (max-width: 1199px) {
+    margin-left: 0px;
+    margin-bottom: 24px;
+    margin-top: 16px;
+  }
+}
+
+.facebook span {
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  -webkit-mask: url(../src/images/facebook.svg) no-repeat center;
+  mask: url(../src/images/facebook.svg) no-repeat center;
+  margin: auto;
+  display: block;
+  margin-right: 12px;
+}
+
+.twitter span {
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  -webkit-mask: url(../src/images/twitter.svg) no-repeat center;
+  mask: url(../src/images/twitter.svg) no-repeat center;
+  margin: auto;
+  display: block;
+  margin-right: 12px;
+}
+
+.whatsapp span {
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  -webkit-mask: url(../src/images/whatsapp.svg) no-repeat center;
+  mask: url(../src/images/whatsapp.svg) no-repeat center;
+  margin: auto;
+  display: block;
+  margin-right: 12px;
+}
+
+.telegram span {
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  -webkit-mask: url(../src/images/telegram.svg) no-repeat center;
+  mask: url(../src/images/telegram.svg) no-repeat center;
+  margin: auto;
+  display: block;
+}
+
+// @media screen and (max-width: 1199px) {
+//   padding: 30px 0 15px;
+// }
