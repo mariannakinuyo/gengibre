@@ -14,13 +14,11 @@ footer {
 
 .logo-footer {
   margin-bottom: 30px;
-  img {
-    width: 192px;
-    height: auto;
-    @media screen and (max-width: 1199px) {
-      width: 140px;
-      margin-bottom: 12px;
-    }
+  width: 192px;
+  height: auto;
+  @media screen and (max-width: 1199px) {
+    width: 140px;
+    margin-bottom: 12px;
   }
 }
 
@@ -53,6 +51,15 @@ footer {
       text-decoration: underline;
     }
   }
+}
+
+.contato {
+    font-size: 16px;
+    color: #fff;
+    &:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
 }
 
 .redes {

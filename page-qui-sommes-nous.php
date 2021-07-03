@@ -1,6 +1,7 @@
 <?php 
 get_header();
 $pageID = get_the_ID();
+$page = get_post(get_the_ID());
 ?>
 
 <section>
@@ -10,9 +11,16 @@ $pageID = get_the_ID();
                 <div class="bg-title" style="background-image: url(<?php bloginfo('template_url'); ?>/src/images/titulo-1.png )">
                     <h1><?php the_title(); ?></h1>
                 </div>
-                <div class="content-quem">
-                    <?php the_content(); ?>
-                </div>
+                <article class="content-quem">
+                    <?php
+                    if ( has_blocks( $page->post_content ) ) {
+                        $blocks = parse_blocks( $page->post_content );
+                        foreach ( $blocks as $block ) {
+                            echo apply_filters( 'the_content', render_block( $block ) );
+                        }
+                    }
+                    ?>
+                </article>
             </div>
         </div>
     </div>
@@ -23,14 +31,11 @@ $titulo_equipe = get_field('titulo_equipe_fr', $pageID);
 $nossa_equipe = get_field('equipe_fr');
 ?>
 <section class="page-equipe">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-8 offset-lg-2 col-12">
-                <h1 class="titulo-light"><?php echo $titulo_equipe; ?></h1>
-            </div>
-            <div class="col-lg-12 col-12">
-                <div class="bg-img flor-equipe" style="background-image: url(<?php bloginfo('template_url'); ?>/src/images/flor-nova.png)">
-                    <div class="col-lg-10 offset-lg-1">
+            <div class="col-lg-12 col-12 p-equipe">
+                <div class="bg-img flor-equipe">
+                    <div class="auto-m p-equipe col-md-6 offset-md-3 col-lg-12">
                         <div class="grid-container">
                             <?php  
                             if( $nossa_equipe ) {
@@ -40,8 +45,10 @@ $nossa_equipe = get_field('equipe_fr');
                                     $descricao_equipe = $equipe['descricao_equipe'];
                                     $link = $equipe['links_equipe'];
                             ?>
-                                <div class="box-img" data-toggle="modal" data-target="#<?php echo $nome_equipe; ?>">
-                                    <img class="img-equipe" src="<?php echo $foto_equipe; ?>" alt="">
+                                <div class="box-img">
+                                    <div class="opacity" data-toggle="modal" data-target="#<?php echo $nome_equipe; ?>">
+                                        <img class="img-equipe" src="<?php echo $foto_equipe; ?>" alt="">
+                                    </div>
                                 </div>
                             <?php 
                             wp_reset_postdata(); }
@@ -49,44 +56,44 @@ $nossa_equipe = get_field('equipe_fr');
                             ?>
                         </div>
                     </div>
-                    <?php  
-                    if( $nossa_equipe ) {
-                        foreach( $nossa_equipe as $equipe ) {
-                            $nome_equipe = $equipe['nome_equipe'];
-                            $foto_equipe = $equipe['foto_equipe'];
-                            $descricao_equipe = $equipe['descricao_equipe'];
-                            $link = $equipe['links_equipe'];
-                    ?>
-                        <!-- modal -->
-                        <div class="modal fade" id="<?php echo $nome_equipe; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                <div class="modal-equipe modal-content">
-                                    <div class="d-flex">
-                                        <img class="img-modal-equipe" src="<?php echo $foto_equipe; ?>" alt="">
-                                        <div>
-                                            <h4><?php echo $nome_equipe; ?></h4>
-                                            <p><?php echo $descricao_equipe; ?></p>
-                                            <?php if ( $link ) {
-                                                $link_url = $link['url'];
-                                                $link_nome = $link['title'];
-                                            }
-                                            ?>
-                                            <a href="<?php echo $link_url; ?>" title="<?php echo $nome_equipe; ?>"><p><?php echo $link_nome ?></p></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php 
-                    wp_reset_postdata(); }
-                    }
-                    ?>
                 </div>
             </div>
         </div>
+        <?php  
+        if( $nossa_equipe ) {
+            foreach( $nossa_equipe as $equipe ) {
+                $nome_equipe = $equipe['nome_equipe'];
+                $foto_equipe = $equipe['foto_equipe'];
+                $descricao_equipe = $equipe['descricao_equipe'];
+                $link = $equipe['links_equipe'];
+        ?>
+            <!-- modal -->
+            <div class="modal fade" id="<?php echo $nome_equipe; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-equipe modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span class="btn-close" aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="d-lg-flex align-items-center box-modal">
+                            <img class="img-modal-equipe" src="<?php echo $foto_equipe; ?>" alt="foto da equipe">
+                            <div class="box-texto">
+                                <h4><?php echo $nome_equipe; ?></h4>
+                                <p><?php echo $descricao_equipe; ?></p>
+                                <?php if ( $link ) {
+                                    $link_url = $link['url'];
+                                    $link_nome = $link['title'];
+                                }
+                                ?>
+                                <a href="<?php echo $link_url; ?>" target="_blank" title="<?php echo $nome_equipe; ?>"><p><?php echo $link_nome ?></p></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php 
+        wp_reset_postdata(); }
+        }
+        ?>
     </div>
 </section>
 
@@ -94,14 +101,14 @@ $nossa_equipe = get_field('equipe_fr');
 $titulo_instituicoes = get_field('titulo_nossas_instituicoes_fr', $pageID);
 $instituicoes = get_field('instituicoes_fr');
 ?>
-<section id="notre-reseau">
+<section id="nossa-rede">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-12">
                 <h1 class="line-green m-auto"><?php echo $titulo_instituicoes; ?></h1>
             </div>
-            <div class="col-lg-10 offset-lg-1 col-12">
-                <div class="d-flex justify-content-between">
+            <div class="col-lg-10 offset-lg-1 col-12 mt-4">
+                <div class="auto-m">
                     <?php  
                     if( $instituicoes ) {
                         foreach( $instituicoes as $instituicao ) {
@@ -109,7 +116,7 @@ $instituicoes = get_field('instituicoes_fr');
                             $logo_instituicao = $instituicao['logo_instituicao'];
                             $link_instituicao = $instituicao['link_instituicao'];
                     ?>
-                        <a href="<?php echo $link_instituicao; ?>" title="<?php echo $nome_instituicao; ?>">
+                        <a class="opacity logo-rede" href="<?php echo $link_instituicao; ?>" title="<?php echo $nome_instituicao; ?>">
                             <div class="rede-radial">
                                 <img src="<?php echo $logo_instituicao; ?>" alt="<?php echo $nome_instituicao; ?>">
                             </div>
@@ -124,9 +131,10 @@ $instituicoes = get_field('instituicoes_fr');
     </div>
 </section>
 
-<?php
-$titulo_rede = get_field('titulo_nossa_rede', $pageID);
-$redes = get_field('rede');
+<?php /*
+$titulo_rede = get_field('titulo_nossa_rede_fr', $pageID);
+$redes = get_field('rede_fr');
+if( $redes ) {
 ?>
 <section>
     <div class="container">
@@ -134,20 +142,20 @@ $redes = get_field('rede');
             <div class="col-lg-8 offset-lg-2 col-12">
                 <h1 class="line-green m-auto"><?php echo $titulo_rede; ?></h1>
             </div>
-            <div class="col-lg-10 offset-lg-1 col-12">
-                <div class="d-flex">
+            <div class="col-lg-10 offset-lg-1 col-12 mt-4">
+                <div class="d-lg-flex">
                     <?php  
-                    if( $redes ) {
+                    
                         foreach( $redes as $rede ) {
                             $nome_rede = $rede['nome_rede'];
                             $logo_rede = $rede['logo_rede'];
                             $link_rede = $rede['link_rede'];
                     ?>
-                        <a href="<?php echo $link_rede; ?>" title="<?php echo $nome_rede; ?>">
+                        <a class="opacity" href="<?php echo $link_rede; ?>" title="<?php echo $nome_rede; ?>">
                             <img src="<?php echo $logo_rede; ?>" alt="<?php echo $nome_rede; ?>">
                         </a>
                     <?php 
-                    wp_reset_postdata(); }
+                    wp_reset_postdata(); 
                     }
                     ?>
                 </div>
@@ -155,6 +163,7 @@ $redes = get_field('rede');
         </div>
     </div>
 </section>
+<?php } */?>
 
 
 

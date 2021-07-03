@@ -29,21 +29,21 @@ $objetivo_3 = get_field('objetivo_3_fr', $pageID);
                 <img src="<?php echo $objetivo_1['icone_1'] ?>" alt="ícone">
             </div>
             <p><strong><?php echo $objetivo_1['titulo_1'] ?></strong></p>
-            <p class="subtitle"><?php echo $objetivo_1['texto_1'] ?></p>
+            <p><?php echo $objetivo_1['texto_1'] ?></p>
         </div>
         <div class="box-objetivos dois-box col-lg-3 col-12">
             <div class="text-center">
                 <img src="<?php echo $objetivo_2['icone_2'] ?>" alt="ícone">
             </div>
             <p><strong><?php echo $objetivo_2['titulo_2'] ?></strong></p>
-            <p class="subtitle"><?php echo $objetivo_2['texto_2'] ?></p>
+            <p><?php echo $objetivo_2['texto_2'] ?></p>
         </div>
         <div class="box-objetivos tres-box col-lg-3 col-12">
             <div class="text-center">
                 <img src="<?php echo $objetivo_3['icone_3'] ?>" alt="ícone">
             </div>
             <p><strong><?php echo $objetivo_3['titulo_3'] ?></strong></p>
-            <p class="subtitle"><?php echo $objetivo_3['texto_3'] ?></p>
+            <p><?php echo $objetivo_3['texto_3'] ?></p>
         </div>
     </div>
 </section>
@@ -57,13 +57,13 @@ $botao_projeto = get_field('botao_projeto_fr', $pageID);
 <section class="home-quem-somos">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 text-quem">
                 <img src="<?php echo $imagem_projeto ?>" alt="">
             </div>
             <div class="col-lg-6">
                 <h1 class="line-green m-auto"><?php echo $titulo_projeto ?></h1>
                 <?php echo $texto_projeto ?>
-                <a href="<?php bloginfo('siteurl'); ?>/projeto"><button class="btn-primario"><?php echo $botao_projeto ?></button></a>
+                <a href="<?php bloginfo('siteurl'); ?>/projet"><button class="btn-primario"><?php echo $botao_projeto ?></button></a>
             </div>
         </div>
     </div>
@@ -82,7 +82,7 @@ $botao_quem_somos = get_field('botao_quem_somos_fr', $pageID);
                 <div class="box-texto">
                     <h1 class="line-green m-auto"><?php echo $titulo_quem_somos ?></h1>
                     <?php echo $texto_quem_somos ?>
-                    <a href="<?php bloginfo('siteurl'); ?>/quem-somos"><button class="btn-primario"><?php echo $botao_quem_somos ?></button></a>
+                    <a href="<?php bloginfo('siteurl'); ?>/qui-sommes-nous"><button class="btn-primario"><?php echo $botao_quem_somos ?></button></a>
                 </div>
             </div>
             <div class="col-lg-6 pl-0">
@@ -103,14 +103,14 @@ $nossa_rede = get_field('nossa_rede_fr');
                 <h1 class="line-green m-auto"><?php echo $titulo_nossa_rede ?></h1>
             </div>
             <div class="col-12 mt-lg-4">
-                <div class="d-flex justify-content-between">
+                <div class="auto-m">
                 <?php  
                 if( $nossa_rede ) {
                     foreach( $nossa_rede as $rede ) {
                         $logo_nossa_rede = $rede['logo_nossa_rede'];
                         $link_nossa_rede = $rede['link_nossa_rede'];
                 ?>
-                    <div class="rede-radial">
+                    <div class="rede-radial logo-rede">
                         <a href="<?php echo $link_nossa_rede ?>">
                             <img src="<?php echo $logo_nossa_rede ?>" alt="Logos da nossa rede">
                         </a>

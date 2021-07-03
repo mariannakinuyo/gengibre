@@ -5,16 +5,13 @@ $frase_destaque = get_field('frase_destaque', $pageID);
 ?>
 
 <section class="hero-home" style="background-image: url(<?php  echo get_field('imagem_destaque', $pageID) ?>)">
-    <!-- <img class="hero-home" src="<?php  echo get_field('imagem_destaque', $pageID) ?>" alt=""> -->
     <div class="container d-none d-lg-block">
         <div class="row">
             <div class="destaque">
                 <p><?php echo $frase_destaque ?></p>
             </div>
         </div>
-        
     </div>
-    
 </section>
 
 <?php
@@ -29,21 +26,21 @@ $objetivo_3 = get_field('objetivo_3', $pageID);
                 <img src="<?php echo $objetivo_1['icone_1'] ?>" alt="ícone">
             </div>
             <p><strong><?php echo $objetivo_1['titulo_1'] ?></strong></p>
-            <p class="subtitle"><?php echo $objetivo_1['texto_1'] ?></p>
+            <p><?php echo $objetivo_1['texto_1'] ?></p>
         </div>
         <div class="box-objetivos dois-box col-lg-3 offset-lg-0 col-10 offset-1">
             <div class="text-center">
                 <img src="<?php echo $objetivo_2['icone_2'] ?>" alt="ícone">
             </div>
             <p><strong><?php echo $objetivo_2['titulo_2'] ?></strong></p>
-            <p class="subtitle"><?php echo $objetivo_2['texto_2'] ?></p>
+            <p><?php echo $objetivo_2['texto_2'] ?></p>
         </div>
         <div class="box-objetivos tres-box col-lg-3 offset-lg-0 col-10 offset-1">
             <div class="text-center">
                 <img src="<?php echo $objetivo_3['icone_3'] ?>" alt="ícone">
             </div>
             <p><strong><?php echo $objetivo_3['titulo_3'] ?></strong></p>
-            <p class="subtitle"><?php echo $objetivo_3['texto_3'] ?></p>
+            <p><?php echo $objetivo_3['texto_3'] ?></p>
         </div>
     </div>
 </section>
@@ -57,7 +54,7 @@ $botao_projeto = get_field('botao_projeto', $pageID);
 <section class="home-quem-somos">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 text-quem">
                 <img src="<?php echo $imagem_projeto ?>" alt="">
             </div>
             <div class="col-lg-6 col-10 offset-1 offset-lg-0">
@@ -103,14 +100,14 @@ $nossa_rede = get_field('nossa_rede');
                 <h1 class="line-green m-auto"><?php echo $titulo_nossa_rede ?></h1>
             </div>
             <div class="col-12 mt-4">
-                <div class="d-lg-flex justify-content-between">
+                <div class="auto-m">
                 <?php  
                 if( $nossa_rede ) {
                     foreach( $nossa_rede as $rede ) {
                         $logo_nossa_rede = $rede['logo_nossa_rede'];
                         $link_nossa_rede = $rede['link_nossa_rede'];
                 ?>
-                    <div class="rede-radial">
+                    <div class="rede-radial logo-rede">
                         <a href="<?php echo $link_nossa_rede ?>">
                             <img src="<?php echo $logo_nossa_rede ?>" alt="Logos da nossa rede">
                         </a>

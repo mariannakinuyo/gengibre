@@ -26,6 +26,7 @@ h1.titulo-light {
     color: #000;
     margin: auto;
     width: fit-content;
+    width: -moz-fit-content;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-bottom: 35px;
 }
@@ -76,6 +77,7 @@ h1.titulo-light {
         @media screen and (min-width: 992px) {
             .opacity {
                 width:fit-content;
+                width: -moz-fit-content;
             }
 
             &:nth-of-type(1) {
@@ -245,6 +247,13 @@ h1.titulo-light {
     }
 }
 
+.conteudo {
+    h1, h2, h3, h4, h5 {
+        text-align: left;
+        font-family: $font-terciary;
+      }
+}
+
 // bloco
 .bg-bloco-img {
     width: 100%;
@@ -284,6 +293,8 @@ h1.titulo-light {
     }
 }
 
+// arquivo
+
 .bg-archive {
     height: 65vh;
     width: 100%;
@@ -291,7 +302,7 @@ h1.titulo-light {
     background-repeat: no-repeat;
     background-size: cover;
     @media screen and (max-width: 991px) {
-        height: 30vh;
+        height: 32vh;
     }
 }
 
@@ -308,7 +319,7 @@ h1.titulo-light {
     h4 {
         font-weight: 600;
         font-family: $font-terciary;
-        margin: 0px;
+        margin: 0px 0px 5px;
         font-size: 24px;
     }
     p {
@@ -326,4 +337,26 @@ h1.titulo-light {
     margin-top: 120px;
     margin-bottom: 120px;
     position: relative;
+}
+
+.btn-arquivo {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 35px;
+    padding-right: 54px;
+}
+
+// nossa rede
+.logo-rede {
+    @media screen and (min-width: 992px) {
+        display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    }
+}
+
+.auto-m {
+    margin: auto;
+    width: fit-content;
+    width: -moz-fit-content;
 }
