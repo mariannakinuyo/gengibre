@@ -1,18 +1,5 @@
-<?php get_header() ?>
+<?php get_header();
 
-
-
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-     
-    </div>
-  </div>
-</div>
-
-<?php
 $categoria = get_queried_object();
 $posts_categoria = new WP_Query(array(
   'post_type' => 'post',
@@ -40,13 +27,15 @@ $posts_categoria = new WP_Query(array(
               $link = get_permalink( $post->ID );
             ?>
                 <div class="col-12 col-lg-4 pr-lg-5">
-                    <div class="box-arquivo">
-                        <img src="<?php echo $thumbtextos ?>" alt="">
-                        <div class="text-arquivo">
-                            <h4><?php the_title(); ?></h4>
-                            <p><?php the_excerpt(); ?></p>
+                    <a href="<?php echo $link ?>">
+                        <div class="box-arquivo">
+                            <img src="<?php echo $thumbtextos ?>" alt="">
+                            <div class="text-arquivo">
+                                <h4><?php the_title(); ?></h4>
+                                <p><?php the_excerpt(); ?></p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             <?php wp_reset_postdata();
             } ?>
