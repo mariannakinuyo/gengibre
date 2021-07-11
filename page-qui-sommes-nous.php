@@ -61,11 +61,11 @@ $nossa_equipe = get_field('equipe_fr');
         </div>
         <?php  
         if( $nossa_equipe ) {
-            foreach( $nossa_equipe as $equipe ) {
+            foreach( $nossa_equipe as $key => $equipe ) {
                 $nome_equipe = $equipe['nome_equipe'];
                 $foto_equipe = $equipe['foto_equipe'];
                 $descricao_equipe = $equipe['descricao_equipe'];
-                $link = $equipe['links_equipe'];
+                $links = $equipe['links_equipe'];
         ?>
             <!-- modal -->
             <div class="modal fade" id="<?php echo $nome_equipe; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -79,12 +79,18 @@ $nossa_equipe = get_field('equipe_fr');
                             <div class="box-texto">
                                 <h4><?php echo $nome_equipe; ?></h4>
                                 <p><?php echo $descricao_equipe; ?></p>
-                                <?php if ( $link ) {
-                                    $link_url = $link['url'];
-                                    $link_nome = $link['title'];
-                                }
+                                <?php if ( $links ) {
+                                    foreach ($links  as $key2 => $site) {
+                                        $link_site = $site['link_site'];
+                                        $link_url = $link_site['url'];
+                                        $link_nome = $link_site['title'];
                                 ?>
-                                <a href="<?php echo $link_url; ?>" target="_blank" title="<?php echo $nome_equipe; ?>"><p><?php echo $link_nome ?></p></a>
+                                    <a href="<?php echo $link_url; ?>" target="_blank" title="<?php echo $nome_equipe; ?>">
+                                        <p><?php echo $link_nome ? $link_nome : $link_url ?></p>
+                                    </a>
+                                <?php 
+                                    } 
+                                } ?>
                             </div>
                         </div>
                     </div>
